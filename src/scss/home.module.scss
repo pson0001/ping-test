@@ -1,0 +1,237 @@
+@import "../scss/variables.module.scss";
+$break-small: 320px;
+$break-medium: 600px;
+$break-slarge: 1000px;
+$break-mlarge: 1200px;
+$break-large: 1300px;
+
+.about {
+  display: block;
+  background: $pings-yellow;
+  border-radius: 50%;
+  border: 4px solid $pings-brown;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 90%;
+  left: 25%;
+  transition: all 0.3s ease-in-out, opacity 0s;
+  &.startAbout {
+    opacity: 1;
+    width: calc(100vw - 44px);
+    height: calc(100vh - 44px);
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    background: $pings-yellow;
+    z-index: 1;
+  }
+}
+.work {
+  display: block;
+  background: $pings-pink;
+  border-radius: 50%;
+  border: 4px solid $pings-brown;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transition: all 0.3s ease-in-out, opacity 0s;
+  &.startWork {
+    opacity: 1;
+    width: calc(100vw - 44px);
+    height: calc(100vh - 44px);
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    background: $pings-pink;
+    z-index: 1;
+  }
+}
+.contact {
+  display: block;
+  background: $pings-blue;
+  border-radius: 50%;
+  border: 4px solid $pings-brown;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 75%;
+  transition: all 0.3s ease-in-out, opacity 0s;
+  &.startContact {
+    opacity: 1;
+    width: calc(100vw - 44px);
+    height: calc(100vh - 44px);
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    background: $pings-blue;
+    z-index: 1;
+  }
+}
+
+.heroContainer {
+  margin: auto;
+  margin-top: 30px;
+  padding-left: 20px;
+  height: 65vh;
+  width: 50vw;
+  background-image: url("../assets/hero.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media screen and (max-width: $break-slarge) {
+    background-image: url("../assets/hero-img.svg");
+    width: 80vw;
+  }
+}
+.heroSentence {
+  display: none;
+  background-image: url("../assets/hero-sen.svg");
+  position: absolute;
+  top: 65vh;
+  right: 40px;
+  width: 60vw;
+  height: 50vh;
+  @media screen and (max-width: $break-slarge) {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url("../assets/hero-sen.svg");
+  }
+}
+.panelContainer {
+  @media screen and (max-width: $break-slarge) {
+    display: none;
+  }
+  & .panelPosition {
+    position: absolute;
+    width: 50vw;
+    left: 50%;
+    transform: translateX(-70%);
+    bottom: 20px;
+    & ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+
+      & li {
+        position: relative;
+        & > div {
+          color: $pings-brown;
+          position: absolute;
+          height: 70px;
+          width: 300px;
+          background-color: $pings-yellow;
+          bottom: 0;
+          border: 4px solid $pings-brown;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          @media screen and (max-width: $break-mlarge) {
+            width: 250px;
+          }
+          & .panelcolumn {
+            margin: 0 auto;
+            & .panelTitle {
+              margin: 25px;
+              font-size: 18px;
+              font-weight: 800;
+            }
+            & a .panelImageInfo {
+              width: 0px;
+              height: 0px;
+
+              background-image: url("../assets/info.svg");
+              background-repeat: no-repeat;
+            }
+            & a .panelImageWork {
+              width: 0px;
+              height: 0px;
+              background-image: url("../assets/work.svg");
+              background-repeat: no-repeat;
+            }
+            & a .panelImageContact {
+              width: 0px;
+              height: 0px;
+              background-image: url("../assets/contact.svg");
+              background-repeat: no-repeat;
+            }
+            & .panelDesc {
+              width: 200px;
+              line-height: 0px;
+              font-size: 0px;
+            }
+            & .panelDescClick {
+              line-height: 0px;
+              text-decoration: underline;
+              font-size: 0px;
+            }
+          }
+          &.panelPink {
+            background-color: $pings-pink;
+          }
+          &.panelBlue {
+            background-color: $pings-blue;
+          }
+          &:hover {
+            height: 450px;
+            transition: height 0.2s ease-in-out;
+            & .panelcolumn {
+              & .panelImageInfo {
+                transition: height 0.1s ease-in-out 0.2s,
+                  width 0.1s ease-in-out 0.2s;
+                height: 180px;
+                width: 200px;
+              }
+              & .panelImageWork {
+                transition: height 0.1s ease-in-out 0.2s,
+                  width 0.1s ease-in-out 0.2s;
+                height: 180px;
+                width: 200px;
+              }
+              & .panelImageContact {
+                transition: height 0.1s ease-in-out 0.2s,
+                  width 0.1s ease-in-out 0.2s;
+                height: 180px;
+                width: 200px;
+              }
+              & .panelDesc {
+                line-height: 36px;
+                font-size: 16px;
+                transition: font-size 0.1s ease-in-out 0.2s,
+                  line-height 0.1s ease-in-out 0.2s;
+              }
+              & .panelDescClick {
+                line-height: 36px;
+                font-size: 16px;
+                transition: font-size 0.1s ease-in-out 0.1s,
+                  line-height 0.1s ease-in-out 0.1s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $break-large) {
+  .panelContainer {
+    & .panelPosition {
+      width: 55vw;
+    }
+  }
+}

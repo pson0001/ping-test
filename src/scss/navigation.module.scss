@@ -1,0 +1,234 @@
+@import "../scss/variables.module.scss";
+$break-small: 320px;
+$break-medium: 600px;
+$break-slarge: 1000px;
+$break-mlarge: 1200px;
+$break-large: 1300px;
+
+.navContainer {
+  width: 70%;
+  margin: auto;
+
+  .navBar {
+    list-style: none;
+    margin: 30px 20px;
+    justify-content: space-between;
+    display: flex;
+    color: $pings-brown;
+
+    & .logoImage {
+      height: 80px;
+      width: 80px;
+      background-image: url("../assets/nav-logo.svg");
+      background-repeat: no-repeat;
+    }
+    & ul {
+      @media screen and (max-width: $break-slarge) {
+        display: none;
+      }
+
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      & a {
+        margin: 20px 70px;
+
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: middle;
+        color: $pings-brown;
+        font-size: 14px;
+        font-weight: 700;
+        position: relative;
+        & li {
+          position: absolute;
+          padding: 8px 5px;
+          bottom: 8px;
+          height: 20px;
+          width: 100px;
+          border: 4px solid $pings-brown;
+          border-radius: 5px;
+          background-color: $pings-yellow;
+          border: 4px solid $pings-brown;
+          text-align: center;
+          vertical-align: middle;
+          & span {
+            position: absolute;
+            height: 20px;
+            bottom: 7px;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+          }
+          &.aboutYellow {
+            background-color: $pings-yellow;
+          }
+          &.workPink {
+            background-color: $pings-pink;
+          }
+          &.contactBlue {
+            background-color: $pings-blue;
+          }
+
+          -webkit-transition: all 0.1s ease-in-out;
+          &:hover {
+            margin-top: -80px;
+            height: 100px;
+            transition: all 0.1s ease-in-out;
+          }
+
+          &.cliked {
+            margin-top: -80px;
+            height: 100px;
+            transition: all 0.1s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  @keyframes checked-anim {
+    // 50% {
+    //   width: 3000px;
+    //   height: 3000px;
+    // }
+
+    100% {
+      width: calc(100% - 48px);
+      height: calc(100% - 44px);
+    }
+  }
+  @keyframes not-checked-anim {
+    0% {
+      width: calc(100% - 48px);
+      height: calc(100% - 44px);
+    }
+  }
+
+  #trigger,
+  #burger,
+  #burger:before,
+  #burger:after {
+    @media screen and (min-width: $break-slarge) {
+      display: none;
+    }
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: $pings-yellow;
+    border-radius: 2px;
+    width: 30px;
+    height: 4px;
+    transition: 0.2s ease;
+    cursor: pointer;
+    z-index: 999;
+  }
+  #trigger {
+    height: 25px;
+    background: none;
+  }
+  #burger:before {
+    content: " ";
+    top: 10px;
+    left: 0;
+  }
+  #burger:after {
+    content: " ";
+    top: 20px;
+    left: 0;
+  }
+  #menuToggle:checked + #trigger + #burger {
+    top: 50px;
+    transform: rotate(180deg);
+    transition: transform 0.2s ease;
+  }
+
+  #menuToggle:checked + #trigger + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform 0.2s ease;
+  }
+  #menuToggle:checked + #trigger + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform 0.2s ease;
+  }
+
+  #menuToggle:checked + #trigger + #burger + #menu {
+    animation: checked-anim 0.2s ease both;
+  }
+  #menuToggle:checked + #trigger ~ #menu {
+    z-index: 998;
+    li {
+      margin-top: 15%;
+      margin-left: 30%;
+      margin-right: 30%;
+      border-radius: 4px;
+      padding: 10px;
+
+      &:first-child:hover {
+        a {
+          transition: all 0.2s ease;
+          color: $pings-brown;
+        }
+
+        background: $pings-yellow;
+        transition: all 0.2s ease;
+      }
+      &:nth-child(2):hover {
+        a {
+          transition: all 0.2s ease;
+          color: $pings-brown;
+        }
+        background: $pings-pink;
+        transition: all 0.2s ease;
+      }
+      &:nth-child(3):hover {
+        a {
+          color: $pings-brown;
+          transition: all 0.2s ease;
+        }
+        background: $pings-blue;
+        transition: all 0.2s ease;
+      }
+      a {
+        transition: all 0.2s ease;
+        text-align: center;
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+  }
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    display: none;
+  }
+}
+
+#menu {
+  @media screen and (min-width: $break-slarge) {
+    display: none;
+  }
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  margin: 0;
+  padding: 0;
+  width: 62px;
+  height: 58px;
+  background-color: $pings-brown;
+  border-bottom-left-radius: 5px;
+  animation: not-checked-anim 0.2s both;
+  transition: 0.2s;
+  list-style: none;
+}
+#menu li a {
+  display: none;
+}

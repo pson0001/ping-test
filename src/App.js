@@ -1,7 +1,9 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Navigation from "./components/Navigation"
+import Container from "./components/Container"
 
-import "./App.css"
+import "./App.scss"
 
 function Index() {
   return <h2>Home</h2>
@@ -19,23 +21,8 @@ function App() {
   return (
     <Router basename="/ping-test">
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/users/">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Route path="/" exact component={Index} />
-        <Route path="/about/" component={About} />
-        <Route path="/users/" component={Users} />
+        <Navigation />
+        <Container />
       </div>
     </Router>
   )

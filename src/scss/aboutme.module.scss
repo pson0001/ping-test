@@ -1,0 +1,180 @@
+@import "../scss/variables.module.scss";
+$break-medium: 600px;
+.about {
+  display: block;
+
+  background: $pings-yellow;
+  border-radius: 50%;
+  border: 4px solid $pings-brown;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 11%;
+  left: 20%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out, opacity 0.1s ease-in-out 0.3s;
+  &.startAbout {
+    width: calc(100vw - 44px);
+    height: calc(100vh - 44px);
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    opacity: 1;
+    background: $pings-yellow;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.aboutmeContainer {
+  overflow: hidden;
+  height: 80vh;
+}
+.cvBlock {
+  padding: 0px 20vw;
+  @media screen and (max-width: $break-medium) {
+    padding: 0px 5vw;
+  }
+  margin: 80px auto;
+  height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  & .cvName {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  & .cvSection {
+    margin: 25px 0;
+    & .cvHeading {
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    & .container {
+      margin-top: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 200px 80%;
+      @media screen and (max-width: $break-medium) {
+        grid-template-columns: 100px 70%;
+      }
+      grid-template-areas:
+        "time heading "
+        "....... detail "
+        "....... detailMore ";
+      font-size: 14px;
+      .time {
+        grid-area: time;
+      }
+      .heading {
+        grid-area: heading;
+        font-weight: 700;
+      }
+      .detail {
+        grid-area: detail;
+      }
+      .detailMore {
+        grid-area: detailMore;
+      }
+    }
+    & .skill {
+      margin-top: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 200px 60%;
+      @media screen and (max-width: $break-medium) {
+        grid-template-columns: 100px 60%;
+      }
+      grid-template-areas:
+        "time detail "
+        "....... detailMore ";
+      font-size: 14px;
+      .time {
+        grid-area: time;
+      }
+
+      .detail {
+        grid-area: detail;
+      }
+      .detailMore {
+        grid-area: detailMore;
+      }
+    }
+    & .employ {
+      margin-top: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 200px 60%;
+      @media screen and (max-width: $break-medium) {
+        grid-template-columns: 100px 60%;
+      }
+      grid-template-areas:
+        "time heading "
+        "company responsiblities "
+        "....... detail ";
+      font-size: 14px;
+      .time {
+        grid-area: time;
+      }
+      .heading {
+        grid-area: heading;
+        font-weight: 700;
+      }
+      .company {
+        grid-area: company;
+      }
+      .responsiblities {
+        grid-area: responsiblities;
+        text-decoration: underline;
+      }
+      .detail {
+        grid-area: detail;
+      }
+    }
+    & .projects {
+      margin-top: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 200px 60%;
+      @media screen and (max-width: $break-medium) {
+        grid-template-columns: 100px 60%;
+      }
+      grid-template-areas:
+        "title heading "
+        "....... detail "
+        "....... skillItem ";
+      font-size: 14px;
+      .title {
+        grid-area: title;
+      }
+      .heading {
+        grid-area: heading;
+        font-weight: 700;
+      }
+
+      .detail {
+        grid-area: detail;
+        list-style: none;
+        & li {
+          padding-bottom: 6px;
+        }
+      }
+      .skillItem {
+        grid-area: skillItem;
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        & li {
+          margin: 6px 12px 6px 0;
+          padding: 6px;
+          border: 1px solid $pings-brown;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
