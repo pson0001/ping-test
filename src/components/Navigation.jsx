@@ -3,7 +3,7 @@ import styles from "../scss/navigation.module.scss"
 import { Link } from "react-router-dom"
 
 const Navigation = props => {
-  //console.log(window.innerWidth)
+  //console.log(props.pageName)
   const [activeAboutPage, setActiveAboutPage] = useState(false)
   const [activeWorkPage, setActiveWorkPage] = useState(false)
   const [activeContactPage, setActiveContactPage] = useState(false)
@@ -41,7 +41,7 @@ const Navigation = props => {
     }
   }
   useEffect(() => {
-    let pathName = window.location.pathname
+    let pathName = props.pageName
     //console.log(pathName)
     if (pathName === "/") {
       setActiveAboutPage(false)
@@ -60,15 +60,16 @@ const Navigation = props => {
       setActiveWorkPage(true)
       setActiveContactPage(false)
     }
-  })
+  }, [props.pageName])
   useEffect(() => {
-    let pathName = window.location.pathname
+    let pathName = props.pageName
+    //console.log(pathName)
     if (pathName !== "/") {
       setShowNav(true)
     } else {
       setShowNav(false)
     }
-  })
+  }, [props.pageName])
   const [checkbox, setCheckbox] = useState(false)
 
   return (

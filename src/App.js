@@ -8,9 +8,9 @@ import "./App.scss"
 function App() {
   const [getPathname, setGetPathname] = useState("")
 
-  useEffect(() => {
-    console.log(getPathname)
-  })
+  // useEffect(() => {
+  //   console.log(getPathname)
+  // })
 
   const handleGetPathname = name => {
     setGetPathname(name)
@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Navigation />
+        <Navigation pageName={getPathname} />
         <Container getPathnameContainer={handleGetPathname} />
       </div>
     </Router>
