@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Switch, Route, withRouter } from "react-router-dom"
 // import { TransitionGroup, CSSTransition } from "react-transition-group"
 import styles from "../scss/container.module.scss"
@@ -17,12 +17,15 @@ import Visualization from "./work/visualization"
 
 import Contact from "./Contact"
 
-function Container({ location }) {
+const Container = props => {
+  useEffect(() => {
+    props.getPathnameContainer(props.location.pathname)
+  })
   return (
     <div className={styles.container}>
       <div>
         <section className={styles.routeSection}>
-          <Switch location={location}>
+          <Switch location={props.location}>
             <Route exact path="/" component={Home} />
             <Route exact path="/AboutMe" component={AboutMe} />
             <Route exact path="/Work" component={Work} />
