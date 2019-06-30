@@ -43,15 +43,15 @@ const Navigation = props => {
   useEffect(() => {
     let pathName = window.location.pathname
     //console.log(pathName)
-    if (pathName === "/pingss-cv/") {
+    if (pathName === "/") {
       setActiveAboutPage(false)
       setActiveWorkPage(false)
       setActiveContactPage(false)
-    } else if (pathName === "/pingss-cv/AboutMe") {
+    } else if (pathName === "/AboutMe") {
       setActiveAboutPage(true)
       setActiveWorkPage(false)
       setActiveContactPage(false)
-    } else if (pathName === "/pingss-cv/Contact") {
+    } else if (pathName === "/Contact") {
       setActiveAboutPage(false)
       setActiveWorkPage(false)
       setActiveContactPage(true)
@@ -63,7 +63,7 @@ const Navigation = props => {
   })
   useEffect(() => {
     let pathName = window.location.pathname
-    if (pathName !== "/pingss-cv/") {
+    if (pathName !== "/") {
       setShowNav(true)
     } else {
       setShowNav(false)
