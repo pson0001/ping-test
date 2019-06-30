@@ -2,7 +2,7 @@
   "name": "ping-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pson0001.github.io/",
+  "homepage": "https://pson0001.github.io/ping-test",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
