@@ -19,7 +19,7 @@ function Users() {
 
 function App() {
   return (
-    <Router basename="/ping-test">
+    <Router>
       <div>
         <Navigation />
         <Container />
