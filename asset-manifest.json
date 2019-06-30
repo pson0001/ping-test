@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ping-test/static/css/main.420a7c08.chunk.css",
-    "main.js": "/ping-test/static/js/main.74c2d81f.chunk.js",
-    "main.js.map": "/ping-test/static/js/main.74c2d81f.chunk.js.map",
+    "main.js": "/ping-test/static/js/main.2efd7bf5.chunk.js",
+    "main.js.map": "/ping-test/static/js/main.2efd7bf5.chunk.js.map",
     "runtime~main.js": "/ping-test/static/js/runtime~main.f71a86b9.js",
     "runtime~main.js.map": "/ping-test/static/js/runtime~main.f71a86b9.js.map",
     "static/js/2.61e1b218.chunk.js": "/ping-test/static/js/2.61e1b218.chunk.js",
     "static/js/2.61e1b218.chunk.js.map": "/ping-test/static/js/2.61e1b218.chunk.js.map",
     "index.html": "/ping-test/index.html",
-    "precache-manifest.f6a1eb15e367601b019ec3e1c2eab3be.js": "/ping-test/precache-manifest.f6a1eb15e367601b019ec3e1c2eab3be.js",
+    "precache-manifest.1a83fa4ee0efc48711e7031ded82acbf.js": "/ping-test/precache-manifest.1a83fa4ee0efc48711e7031ded82acbf.js",
     "service-worker.js": "/ping-test/service-worker.js",
     "static/css/main.420a7c08.chunk.css.map": "/ping-test/static/css/main.420a7c08.chunk.css.map",
     "static/media/work.module.scss": "/ping-test/static/media/visualisation.d40af013.jpg",
